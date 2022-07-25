@@ -12,8 +12,8 @@ let BtnStatus = document.querySelector('.status');
 let LiftContainer = [];
 let movableLifts = [];
 
-var LiftNumbers = 5;
-var FloorNumbers = 8;
+var LiftNumbers = 3;
+var FloorNumbers = 7;
 
 function init() {
     for (let i = 0; i < LiftNumbers; i++) {
@@ -66,8 +66,10 @@ function Movements(id) {
         //  ------------------ Update UI ------------------
         let Liftcnt = MinDistanceLift[Math.floor(Math.random() * MinDistanceLift.length)];
         let cnt = Liftcnt.LiftNumber;
+        let cur = Liftcnt.LiftPosition;
         document.querySelector(`#lift-box-${cnt}`).style.bottom = `${index[1] * 3}em`;
         document.querySelector(`#lift-box-${cnt}`).textContent = `${index[1]}`;
+        document.querySelector(`#lift-box-${cnt}`).style.transition = `bottom ${Math.abs(index[1] - cur)*1}s`;
         LiftContainer[cnt].isMoving = true;
         document.getElementById(`floor-${index[1]}`).disabled = true;
         LiftContainer[cnt].LiftPosition = `${index[1]}`;
@@ -92,12 +94,12 @@ function Reset() {
         if (FloorNumbers) {
             FloorNumbers = FloorNumbers;
         } else {
-            LiftNumbers = 5;
-            FloorNumbers = 8;
+            LiftNumbers = 3;
+            FloorNumbers = 7;
         }
     } else {
-        LiftNumbers = 5;
-        FloorNumbers = 8;
+        LiftNumbers = 3;
+        FloorNumbers = 7;
     }
     init();
 }
@@ -113,9 +115,6 @@ function EditMentanance(id) {
             if (lift.LiftNumber == Liftnum[1]) {
                 lift.isChecked = true;
                 lift.isAvailable = `Not Available`;
-                lift.LiftPosition = 0;
-                document.querySelector(`#lift-box-${lift.LiftNumber}`).style.bottom = 0;
-                document.querySelector(`#lift-box-${lift.LiftNumber}`).textContent = 0;
                 document.querySelector(`#lift-box-${lift.LiftNumber}`).classList.add('stop');
             }
         });
