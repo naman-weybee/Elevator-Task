@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: .15em;
+}
+
+body {
+    background: white;
+    font-family: 'poppins';
+}
+
+main {
+    background: rgb(247, 245, 245);
+    width: 70%;
+    margin: auto;
+}
+
+.header {
+    width: 70%;
+    margin: auto;
+    border-bottom: 1px solid gray;
+    padding: .5em;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+.elevators-body {
+    display: flex;
+}
+
+.elevators {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+}
+
+.floors {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.elevators .lift {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    height: 3em;
+    width: 0.5em;
+    background: red;
+}
+
+.elevators .lift-box {
+    position: absolute;
+    background: gray;
+    height: 3em;
+    width: 2.4em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0em;
+    transition: 1s;
+}
+
+button {
+    height: 3em;
+    border: 1px solid gray;
+    border-radius: 0;
+    width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    padding-right: 5em;
+    background: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+button:disabled,
+button[disabled] {
+    color: black;
+}
+
+button:hover {
+    background: rgb(198, 196, 196);
+    color: white;
+}
+
+.reset {
+    position: absolute;
+    width: 8%;
+    left: 25px;
+    display: block;
+    padding: 0;
+    background: rgb(247, 245, 245);
+    border: 0;
+    color: black;
+    transition: .2s;
+    border-radius: .15em;
+    margin: 2em auto auto;
+}
+
+.reset:hover {
+    background: rgb(198, 76, 76);
+    color: white;
+}
+
+.status {
+    position: absolute;
+    width: 8%;
+    left: 25px;
+    display: block;
+    padding: 0;
+    background: rgb(247, 245, 245);
+    border: 0;
+    color: black;
+    transition: .2s;
+    border-radius: .15em;
+    margin: 6em auto auto;
+}
+
+.status:hover {
+    background: rgb(198, 76, 76);
+    color: white;
+}
+
+.mentanance-body {
+    display: flex;
+    padding-bottom: 0.5em;
+}
+
+.mentanance {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+}
+
+.mentanance-text {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    padding-right: 2em;
+    font-weight: bold;
+}
+
+.stop {
+    border: 2px solid black;
+}
+
+.lift-status {
+    background: red;
+    width: 200px;
+}
+
+.lift-status {
+    background: rgb(255, 255, 255);
+    color: black;
+    margin-top: 10em;
+    position: absolute;
+    padding-left: 1em;
+    border: 1px solid black;
+    margin-left: .5em;
+    margin-right: .5em;
+    width: 12em;
+    z-index: 999;
+    display: none;
+}
+
+.over {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+}
